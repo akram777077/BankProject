@@ -64,8 +64,9 @@
             this.tbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUserName.ForeColor = System.Drawing.Color.Cyan;
             this.tbUserName.Location = new System.Drawing.Point(384, 128);
+            this.tbUserName.MaxLength = 10;
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(184, 29);
+            this.tbUserName.Size = new System.Drawing.Size(150, 29);
             this.tbUserName.TabIndex = 2;
             // 
             // tbPassword
@@ -74,9 +75,10 @@
             this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPassword.ForeColor = System.Drawing.Color.Cyan;
             this.tbPassword.Location = new System.Drawing.Point(384, 177);
+            this.tbPassword.MaxLength = 16;
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
-            this.tbPassword.Size = new System.Drawing.Size(184, 29);
+            this.tbPassword.Size = new System.Drawing.Size(150, 29);
             this.tbPassword.TabIndex = 3;
             // 
             // label3
@@ -96,7 +98,7 @@
             this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Location = new System.Drawing.Point(493, 228);
+            this.btnLogin.Location = new System.Drawing.Point(459, 221);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 5;
