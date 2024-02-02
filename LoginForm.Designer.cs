@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbUserName = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.epRed = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.epRed)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -61,13 +64,15 @@
             // tbUserName
             // 
             this.tbUserName.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.tbUserName.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.tbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUserName.ForeColor = System.Drawing.Color.Cyan;
             this.tbUserName.Location = new System.Drawing.Point(384, 128);
-            this.tbUserName.MaxLength = 10;
+            this.tbUserName.MaxLength = 14;
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(150, 29);
-            this.tbUserName.TabIndex = 2;
+            this.tbUserName.TabIndex = 0;
+            this.tbUserName.Validating += new System.ComponentModel.CancelEventHandler(this.tbUserName_Validating);
             // 
             // tbPassword
             // 
@@ -79,7 +84,8 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(150, 29);
-            this.tbPassword.TabIndex = 3;
+            this.tbPassword.TabIndex = 1;
+            this.tbPassword.Validating += new System.ComponentModel.CancelEventHandler(this.tbPassword_Validating);
             // 
             // label3
             // 
@@ -101,9 +107,13 @@
             this.btnLogin.Location = new System.Drawing.Point(459, 221);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 5;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            // 
+            // epRed
+            // 
+            this.epRed.ContainerControl = this;
             // 
             // FormUserLogin
             // 
@@ -118,7 +128,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormUserLogin";
-            this.Text = "User Login";
+            this.Text = "  ";
+            ((System.ComponentModel.ISupportInitialize)(this.epRed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +143,6 @@
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.ErrorProvider epRed;
     }
 }
