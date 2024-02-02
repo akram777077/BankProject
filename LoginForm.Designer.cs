@@ -64,7 +64,6 @@
             // tbUserName
             // 
             this.tbUserName.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.tbUserName.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.tbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUserName.ForeColor = System.Drawing.Color.Cyan;
             this.tbUserName.Location = new System.Drawing.Point(384, 128);
