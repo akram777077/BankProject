@@ -62,30 +62,40 @@ namespace BankProject
             if (!isValidUser(tbUserName.Text, tbPassword.Text))
                 return;
             Form main = new userMainForm();
-            main.ShowDialog();
             this.Hide();
-            tbPassword.Clear();
-            tbUserName.Clear();
+            main.ShowDialog();
             this.Show();
-            start = true;
-            tbUserName.Focus();
+            FormUserLogin_Load(sender, e);
         }
 
         private void FormUserLogin_Load(object sender, EventArgs e)
         {
+            tbPassword.Clear();
+            start = true;
+            tbUserName.Clear();
+            start = true;
             tbUserName.Focus();
             btnLogin.Enabled = false;
+            tbUserName.Tag = "false";
+            tbPassword.Tag = "false";
         }
-
+        private void makeLoginPossible()
+        {
+            if (Convert.ToBoolean(tbUserName.Tag) && Convert.ToBoolean(tbPassword.Tag))
+                btnLogin.Enabled = true;
+        }
         private void tbUserName_TextChanged(object sender, EventArgs e)
         {
+            tbUserName.Tag = "true";
             start = false;
-            
+            makeLoginPossible();
         }
 
         private void tbPassword_TextChanged(object sender, EventArgs e)
         {
-            btnLogin.Enabled = true;
+            tbPassword.Tag = "true";
+            start = false;
+            makeLoginPossible();
         }
 
     }

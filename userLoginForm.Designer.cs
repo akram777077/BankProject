@@ -72,6 +72,7 @@
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(150, 29);
             this.tbUserName.TabIndex = 0;
+            this.tbUserName.Tag = "false";
             this.tbUserName.TextChanged += new System.EventHandler(this.tbUserName_TextChanged);
             this.tbUserName.Validating += new System.ComponentModel.CancelEventHandler(this.tbUserName_Validating);
             // 
@@ -86,6 +87,7 @@
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(150, 29);
             this.tbPassword.TabIndex = 1;
+            this.tbPassword.Tag = "false";
             this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
             this.tbPassword.Validating += new System.ComponentModel.CancelEventHandler(this.tbPassword_Validating);
             // 
