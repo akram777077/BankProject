@@ -66,9 +66,9 @@ namespace BankProject
             this.Hide();
             tbPassword.Clear();
             tbUserName.Clear();
-            tbUserName.Focus();
             this.Show();
             start = true;
+            tbUserName.Focus();
         }
 
         private void FormUserLogin_Load(object sender, EventArgs e)
