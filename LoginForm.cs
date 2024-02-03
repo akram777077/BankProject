@@ -39,5 +39,10 @@ namespace BankProject
         {
             checkTextBoxEmpty(sender, e, 0, "Non empty");
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
