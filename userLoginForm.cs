@@ -68,6 +68,7 @@ namespace BankProject
             tbUserName.Clear();
             tbUserName.Focus();
             this.Show();
+            start = true;
         }
 
         private void FormUserLogin_Load(object sender, EventArgs e)
