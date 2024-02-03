@@ -16,6 +16,10 @@ namespace BankProject
         {
             InitializeComponent();
         }
+        ~FormUserLogin()
+        {
+            this.Close();
+        }
         private void checkTextBoxEmpty(object sender, CancelEventArgs e,int numberChar,string message)
         {
             if(((TextBox)sender).Text.Length<=numberChar)
@@ -43,6 +47,23 @@ namespace BankProject
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private bool isValidUser(string username,string password)
+        {
+            if (username == "admin" && password == "admin1234")
+                return true;
+            return false;
+        }
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (!isValidUser(tbUserName.Text, tbPassword.Text))
+                return;
+            Form main = new userMainForm();
+            main.ShowDialog();
+            this.Hide();
+            tbPassword.Clear();
+            tbUserName.Clear();
+            this.Show();
         }
     }
 }
