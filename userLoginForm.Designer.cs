@@ -134,7 +134,6 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(49, 38);
             this.btnExit.TabIndex = 5;
-            this.btnExit.TabStop = false;
             this.btnExit.Text = "X";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
