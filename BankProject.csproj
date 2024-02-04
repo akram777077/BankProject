@@ -52,6 +52,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clientMangmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clientMangmentForm.Designer.cs">
+      <DependentUpon>clientMangmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="userMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userMangmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userMangmentForm.Designer.cs">
+      <DependentUpon>userMangmentForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="userMainForm.resx">
       <DependentUpon>userMainForm.cs</DependentUpon>
     </EmbeddedResource>
