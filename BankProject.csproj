@@ -78,6 +78,9 @@
     <Compile Include="userMangmentForm.Designer.cs">
       <DependentUpon>userMangmentForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="clientMangmentForm.resx">
+      <DependentUpon>clientMangmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userMainForm.resx">
       <DependentUpon>userMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +96,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="userMangmentForm.resx">
+      <DependentUpon>userMangmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
