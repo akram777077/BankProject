@@ -56,7 +56,7 @@
             // 
             this.btnClientMang.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnClientMang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnClientMang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnClientMang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btnClientMang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientMang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnClientMang.Location = new System.Drawing.Point(321, 127);
@@ -65,12 +65,13 @@
             this.btnClientMang.TabIndex = 0;
             this.btnClientMang.Text = "client Mangment";
             this.btnClientMang.UseVisualStyleBackColor = true;
+            this.btnClientMang.Click += new System.EventHandler(this.btnClientMang_Click);
             // 
             // btnUsersMangment
             // 
             this.btnUsersMangment.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnUsersMangment.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnUsersMangment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnUsersMangment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btnUsersMangment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsersMangment.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUsersMangment.Location = new System.Drawing.Point(321, 223);
@@ -79,12 +80,13 @@
             this.btnUsersMangment.TabIndex = 1;
             this.btnUsersMangment.Text = "Users Mangment";
             this.btnUsersMangment.UseVisualStyleBackColor = true;
+            this.btnUsersMangment.Click += new System.EventHandler(this.btnUsersMangment_Click);
             // 
             // btnLogLogin
             // 
             this.btnLogLogin.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLogLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnLogLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLogLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btnLogLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLogLogin.Location = new System.Drawing.Point(321, 315);
@@ -93,6 +95,7 @@
             this.btnLogLogin.TabIndex = 2;
             this.btnLogLogin.Text = "Log Login";
             this.btnLogLogin.UseVisualStyleBackColor = true;
+            this.btnLogLogin.Click += new System.EventHandler(this.btnLogLogin_Click);
             // 
             // label3
             // 

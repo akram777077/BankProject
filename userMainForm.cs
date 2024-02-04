@@ -23,5 +23,27 @@ namespace BankProject
                 return;
             this.Close();
         }
+
+        private void btnClientMang_Click(object sender, EventArgs e)
+        {
+            Form clientM = new clientMangmentForm();
+            this.Hide();
+            clientM.ShowDialog();
+            this.Show();
+        }
+
+        private void btnUsersMangment_Click(object sender, EventArgs e)
+        {
+            Form userM = new userMangmentForm();
+            this.Hide();
+            userM.ShowDialog();
+            this.Show();
+
+        }
+
+        private void btnLogLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
