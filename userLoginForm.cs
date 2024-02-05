@@ -12,6 +12,7 @@ namespace BankProject
 {
     public partial class FormUserLogin : Form
     {
+        private byte countErrorLogIn=3;
         public FormUserLogin()
         {
             InitializeComponent();
@@ -60,7 +61,13 @@ namespace BankProject
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (!isValidUser(tbUserName.Text, tbPassword.Text))
+            {
+                epRed.SetError(btnLogin, "your password or user name is false ( " + (countErrorLogIn - 1).ToString() + " chance)");
+                countErrorLogIn--;
+                if (countErrorLogIn == 0)
+                    this.Close();
                 return;
+            }
             Form main = new userMainForm();
             this.Hide();
             main.ShowDialog();
@@ -78,6 +85,9 @@ namespace BankProject
             btnLogin.Enabled = false;
             tbUserName.Tag = "false";
             tbPassword.Tag = "false";
+            epRed.SetError(btnLogin, "");
+            countErrorLogIn = 3;
+
         }
         private void makeLoginPossible()
         {
