@@ -58,6 +58,7 @@
     <Compile Include="clientMangmentForm.Designer.cs">
       <DependentUpon>clientMangmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="userMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +79,7 @@
     <Compile Include="userMangmentForm.Designer.cs">
       <DependentUpon>userMangmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users.cs" />
     <EmbeddedResource Include="clientMangmentForm.resx">
       <DependentUpon>clientMangmentForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -75,6 +75,7 @@
             this.tabPage1.Size = new System.Drawing.Size(768, 363);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add User";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabPage2
             // 
