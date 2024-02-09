@@ -13,6 +13,8 @@ namespace BankProject
         [STAThread]
         static void Main()
         {
+            Globale.listUsers = new Users("F:\\programming\\vs\\BankProject\\users.txt", "//##//", 7);
+            Globale.listUsers.load();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormUserLogin());

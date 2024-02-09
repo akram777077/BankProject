@@ -28,7 +28,7 @@ public class Users
 	}
 	public User getUserID(string ID)
 	{
-		for(int i=0;_users.Count<i;i++)
+		for(int i=0;i<_users.Count;i++)
 		{
 			if (_users[i].Id == ID)
 				return _users[i]; 

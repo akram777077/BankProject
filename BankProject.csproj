@@ -58,6 +58,7 @@
     <Compile Include="clientMangmentForm.Designer.cs">
       <DependentUpon>clientMangmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Globale.cs" />
     <Compile Include="User.cs" />
     <Compile Include="userMainForm.cs">
       <SubType>Form</SubType>
