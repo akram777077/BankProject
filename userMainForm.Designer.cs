@@ -33,6 +33,7 @@
             this.btnUsersMangment = new System.Windows.Forms.Button();
             this.btnLogLogin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLogout
@@ -108,12 +109,24 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Main";
             // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblUser.Location = new System.Drawing.Point(431, 82);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(57, 20);
+            this.lblUser.TabIndex = 11;
+            this.lblUser.Text = "User: ";
+            // 
             // userMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnLogLogin);
             this.Controls.Add(this.btnUsersMangment);
@@ -123,6 +136,7 @@
             this.Name = "userMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.userMainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,6 +149,7 @@
         private System.Windows.Forms.Button btnUsersMangment;
         private System.Windows.Forms.Button btnLogLogin;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblUser;
     }
 }
 

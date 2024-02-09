@@ -37,7 +37,7 @@ public class Users
 	}
 	public User getUserUserName(string UserName)
 	{
-        for (int i = 0; _users.Count < i; i++)
+        for (int i = 0; i<_users.Count; i++)
         {
             if (_users[i].UserName == UserName)
                 return _users[i];

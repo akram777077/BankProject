@@ -19,7 +19,7 @@ namespace BankProject
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure for logout ?", "logout", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+            if (MessageBox.Show(Globale.currentUser.UserName+" are you sure for logout ?", Globale.currentUser.UserName+" logout", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
                 return;
             this.Close();
         }
@@ -44,6 +44,11 @@ namespace BankProject
         private void btnLogLogin_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void userMainForm_Load(object sender, EventArgs e)
+        {
+            lblUser.Text = lblUser.Text + Globale.currentUser.UserName;
         }
     }
 }

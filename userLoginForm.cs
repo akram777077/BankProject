@@ -54,8 +54,12 @@ namespace BankProject
         }
         private bool isValidUser(string username,string password)
         {
-            if (username == "admin" && password == "admin1234")
+            User current = Globale.listUsers.getUserUserName(username);
+            if (current != null && current.Password == password)
+            {
+                Globale.currentUser = current;
                 return true;
+            }
             return false;
         }
         private void btnLogin_Click(object sender, EventArgs e)
