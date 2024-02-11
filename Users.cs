@@ -51,8 +51,9 @@ public class Users
 	}
 	public void save()
 	{
+		this.clearFile();
 		for (int i = 0; i < _users.Count; i++)
-            File.WriteAllText(this._fileName, _users[i].toLine(_separator, _key)+"\n");
+            File.AppendAllText(this._fileName, _users[i].toLine(_separator, _key)+"\n");
 		
 	}
 	public void load()
