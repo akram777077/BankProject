@@ -109,6 +109,20 @@ namespace BankProject
             ErrrEmpty.SetError(txtFirstName, "");
             txtLastName.Clear();
             ErrrEmpty.SetError(txtLastName, "");
+            DesableFindUser();
+            
+        }
+        private void DesableFindUser()
+        {
+            txtFindAddress.Enabled = false;
+            txtFindFirstName.Enabled = false;
+            txtFindLastName.Enabled = false;
+            txtFindEmail.Enabled = false;
+            txtFindID.Enabled = false;
+            txtFindUserName.Enabled = false;
+            txtFindPassword.Enabled = false;
+            txtFindPhone.Enabled = false;
+            dtFindDateOfBirth.Enabled = false;
         }
         private bool valideID(string id)
         {
@@ -306,6 +320,37 @@ namespace BankProject
         private void label19_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+        void fillTheTextBoxWithUser(User target)
+        {
+            txtFindAddress.Text = target.Address;
+            txtFindFirstName.Text = target.FirstName;
+            txtFindLastName.Text= target.LastName;
+            txtFindEmail.Text = target.Email;
+            txtFindID.Text = target.Id;
+            txtFindUserName.Text = target.UserName;
+            txtFindPassword.Text = target.Password;
+            txtFindPhone.Text = target.Phone;
+            dtFindDateOfBirth.Text = target.DateOfBirth.ToString();
+            progressTotalFind.Text = "100%";
+            progressTotalFind.Value = 100;
+        }
+        private void btnSearchUser_Click(object sender, EventArgs e)
+        {
+            if(txtSearchById.Text.Length == 0 && txtSearchByUserName.Text.Length == 0)
+            {
+                return;
+            }
+            else
+            {
+                User target = Globale.listUsers.getUserID(txtSearchById.Text);
+                fillTheTextBoxWithUser(target);
+            }
         }
     }
 }

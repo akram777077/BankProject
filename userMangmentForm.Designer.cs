@@ -53,13 +53,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblFist = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ErrrEmpty = new System.Windows.Forms.ErrorProvider(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSaveUser = new System.Windows.Forms.Button();
+            this.btnEditUser = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSearchUser = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtSearchById = new System.Windows.Forms.TextBox();
+            this.txtSearchByUserName = new System.Windows.Forms.TextBox();
+            this.gbInfromation = new System.Windows.Forms.GroupBox();
             this.txtFindEmail = new System.Windows.Forms.TextBox();
             this.txtFindPhone = new System.Windows.Forms.TextBox();
             this.txtFindID = new System.Windows.Forms.TextBox();
-            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
+            this.progressTotalFind = new CircularProgressBar.CircularProgressBar();
             this.dtFindDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.txtFindAddress = new System.Windows.Forms.TextBox();
             this.txtFindFirstName = new System.Windows.Forms.TextBox();
@@ -75,20 +81,14 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtSearchById = new System.Windows.Forms.TextBox();
-            this.txtSearchByUserName = new System.Windows.Forms.TextBox();
-            this.btnEditUser = new System.Windows.Forms.Button();
-            this.btnSearchUser = new System.Windows.Forms.Button();
-            this.btnSaveUser = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.ErrrEmpty = new System.Windows.Forms.ErrorProvider(this.components);
             this.x.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ErrrEmpty)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.gbInfromation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrrEmpty)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExit
@@ -386,7 +386,7 @@
             this.tabPage2.Controls.Add(this.btnSaveUser);
             this.tabPage2.Controls.Add(this.btnEditUser);
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.gbInfromation);
             this.tabPage2.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -394,51 +394,135 @@
             this.tabPage2.Size = new System.Drawing.Size(768, 363);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "find user";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // tabPage3
+            // btnSaveUser
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Black;
-            this.tabPage3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(768, 363);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "list Users";
+            this.btnSaveUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSaveUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSaveUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnSaveUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSaveUser.Location = new System.Drawing.Point(683, 321);
+            this.btnSaveUser.Name = "btnSaveUser";
+            this.btnSaveUser.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveUser.TabIndex = 13;
+            this.btnSaveUser.Text = "Save";
+            this.btnSaveUser.UseVisualStyleBackColor = true;
             // 
-            // ErrrEmpty
+            // btnEditUser
             // 
-            this.ErrrEmpty.ContainerControl = this;
+            this.btnEditUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEditUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnEditUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnEditUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEditUser.Location = new System.Drawing.Point(575, 321);
+            this.btnEditUser.Name = "btnEditUser";
+            this.btnEditUser.Size = new System.Drawing.Size(75, 23);
+            this.btnEditUser.TabIndex = 12;
+            this.btnEditUser.Text = "Edit";
+            this.btnEditUser.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // groupBox2
             // 
-            this.groupBox1.Controls.Add(this.txtFindEmail);
-            this.groupBox1.Controls.Add(this.txtFindPhone);
-            this.groupBox1.Controls.Add(this.txtFindID);
-            this.groupBox1.Controls.Add(this.circularProgressBar1);
-            this.groupBox1.Controls.Add(this.dtFindDateOfBirth);
-            this.groupBox1.Controls.Add(this.txtFindAddress);
-            this.groupBox1.Controls.Add(this.txtFindFirstName);
-            this.groupBox1.Controls.Add(this.txtFindLastName);
-            this.groupBox1.Controls.Add(this.txtFindUserName);
-            this.groupBox1.Controls.Add(this.txtFindPassword);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(759, 223);
-            this.groupBox1.TabIndex = 48;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Infromation";
+            this.groupBox2.Controls.Add(this.btnSearchUser);
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.txtSearchById);
+            this.groupBox2.Controls.Add(this.txtSearchByUserName);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(10, 244);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(311, 116);
+            this.groupBox2.TabIndex = 49;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Search By";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // btnSearchUser
+            // 
+            this.btnSearchUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSearchUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSearchUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnSearchUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSearchUser.Location = new System.Drawing.Point(220, 77);
+            this.btnSearchUser.Name = "btnSearchUser";
+            this.btnSearchUser.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchUser.TabIndex = 11;
+            this.btnSearchUser.Text = "Search";
+            this.btnSearchUser.UseVisualStyleBackColor = true;
+            this.btnSearchUser.Click += new System.EventHandler(this.btnSearchUser_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label19.Location = new System.Drawing.Point(6, 54);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(85, 16);
+            this.label19.TabIndex = 52;
+            this.label19.Text = "User Name";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label18.Location = new System.Drawing.Point(6, 19);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(22, 16);
+            this.label18.TabIndex = 51;
+            this.label18.Text = "ID";
+            // 
+            // txtSearchById
+            // 
+            this.txtSearchById.Location = new System.Drawing.Point(113, 15);
+            this.txtSearchById.Name = "txtSearchById";
+            this.txtSearchById.Size = new System.Drawing.Size(100, 20);
+            this.txtSearchById.TabIndex = 9;
+            this.txtSearchById.Tag = "false";
+            // 
+            // txtSearchByUserName
+            // 
+            this.txtSearchByUserName.Location = new System.Drawing.Point(113, 50);
+            this.txtSearchByUserName.Name = "txtSearchByUserName";
+            this.txtSearchByUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtSearchByUserName.TabIndex = 10;
+            this.txtSearchByUserName.Tag = "false";
+            // 
+            // gbInfromation
+            // 
+            this.gbInfromation.Controls.Add(this.txtFindEmail);
+            this.gbInfromation.Controls.Add(this.txtFindPhone);
+            this.gbInfromation.Controls.Add(this.txtFindID);
+            this.gbInfromation.Controls.Add(this.progressTotalFind);
+            this.gbInfromation.Controls.Add(this.dtFindDateOfBirth);
+            this.gbInfromation.Controls.Add(this.txtFindAddress);
+            this.gbInfromation.Controls.Add(this.txtFindFirstName);
+            this.gbInfromation.Controls.Add(this.txtFindLastName);
+            this.gbInfromation.Controls.Add(this.txtFindUserName);
+            this.gbInfromation.Controls.Add(this.txtFindPassword);
+            this.gbInfromation.Controls.Add(this.label1);
+            this.gbInfromation.Controls.Add(this.label10);
+            this.gbInfromation.Controls.Add(this.label11);
+            this.gbInfromation.Controls.Add(this.label12);
+            this.gbInfromation.Controls.Add(this.label13);
+            this.gbInfromation.Controls.Add(this.label14);
+            this.gbInfromation.Controls.Add(this.label15);
+            this.gbInfromation.Controls.Add(this.label16);
+            this.gbInfromation.Controls.Add(this.label17);
+            this.gbInfromation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbInfromation.ForeColor = System.Drawing.Color.White;
+            this.gbInfromation.Location = new System.Drawing.Point(6, 6);
+            this.gbInfromation.Name = "gbInfromation";
+            this.gbInfromation.Size = new System.Drawing.Size(759, 223);
+            this.gbInfromation.TabIndex = 48;
+            this.gbInfromation.TabStop = false;
+            this.gbInfromation.Text = "Infromation";
             // 
             // txtFindEmail
             // 
@@ -458,43 +542,43 @@
             // 
             // txtFindID
             // 
-            this.txtFindID.Location = new System.Drawing.Point(215, 68);
+            this.txtFindID.Location = new System.Drawing.Point(215, 63);
             this.txtFindID.Name = "txtFindID";
             this.txtFindID.Size = new System.Drawing.Size(100, 20);
             this.txtFindID.TabIndex = 0;
             this.txtFindID.Tag = "false";
             // 
-            // circularProgressBar1
+            // progressTotalFind
             // 
-            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar1.AnimationSpeed = 500;
-            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar1.InnerMargin = 2;
-            this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(4, 17);
-            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar1.Name = "circularProgressBar1";
-            this.circularProgressBar1.OuterColor = System.Drawing.Color.DimGray;
-            this.circularProgressBar1.OuterMargin = 3;
-            this.circularProgressBar1.OuterWidth = -8;
-            this.circularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.circularProgressBar1.ProgressWidth = 5;
-            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Impact", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularProgressBar1.Size = new System.Drawing.Size(100, 93);
-            this.circularProgressBar1.StartAngle = 270;
-            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.circularProgressBar1.SubscriptText = ".23";
-            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.circularProgressBar1.SuperscriptText = "°C";
-            this.circularProgressBar1.TabIndex = 59;
-            this.circularProgressBar1.Text = "0%";
-            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.circularProgressBar1.Value = 68;
+            this.progressTotalFind.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.progressTotalFind.AnimationSpeed = 500;
+            this.progressTotalFind.BackColor = System.Drawing.Color.Transparent;
+            this.progressTotalFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progressTotalFind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.progressTotalFind.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.progressTotalFind.InnerMargin = 2;
+            this.progressTotalFind.InnerWidth = -1;
+            this.progressTotalFind.Location = new System.Drawing.Point(4, 17);
+            this.progressTotalFind.MarqueeAnimationSpeed = 2000;
+            this.progressTotalFind.Name = "progressTotalFind";
+            this.progressTotalFind.OuterColor = System.Drawing.Color.DimGray;
+            this.progressTotalFind.OuterMargin = 3;
+            this.progressTotalFind.OuterWidth = -8;
+            this.progressTotalFind.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.progressTotalFind.ProgressWidth = 5;
+            this.progressTotalFind.SecondaryFont = new System.Drawing.Font("Impact", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progressTotalFind.Size = new System.Drawing.Size(100, 93);
+            this.progressTotalFind.StartAngle = 270;
+            this.progressTotalFind.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progressTotalFind.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.progressTotalFind.SubscriptText = ".23";
+            this.progressTotalFind.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progressTotalFind.SuperscriptMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.progressTotalFind.SuperscriptText = "°C";
+            this.progressTotalFind.TabIndex = 59;
+            this.progressTotalFind.Text = "0%";
+            this.progressTotalFind.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.progressTotalFind.Value = 68;
             // 
             // dtFindDateOfBirth
             // 
@@ -531,7 +615,7 @@
             // 
             // txtFindUserName
             // 
-            this.txtFindUserName.Location = new System.Drawing.Point(215, 124);
+            this.txtFindUserName.Location = new System.Drawing.Point(215, 119);
             this.txtFindUserName.Name = "txtFindUserName";
             this.txtFindUserName.Size = new System.Drawing.Size(100, 20);
             this.txtFindUserName.TabIndex = 1;
@@ -539,7 +623,7 @@
             // 
             // txtFindPassword
             // 
-            this.txtFindPassword.Location = new System.Drawing.Point(215, 185);
+            this.txtFindPassword.Location = new System.Drawing.Point(215, 180);
             this.txtFindPassword.Name = "txtFindPassword";
             this.txtFindPassword.Size = new System.Drawing.Size(100, 20);
             this.txtFindPassword.TabIndex = 2;
@@ -594,7 +678,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Location = new System.Drawing.Point(114, 189);
+            this.label13.Location = new System.Drawing.Point(114, 184);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 16);
             this.label13.TabIndex = 49;
@@ -605,7 +689,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(114, 124);
+            this.label14.Location = new System.Drawing.Point(114, 119);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(85, 16);
             this.label14.TabIndex = 47;
@@ -616,7 +700,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label15.Location = new System.Drawing.Point(114, 68);
+            this.label15.Location = new System.Drawing.Point(114, 63);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(22, 16);
             this.label15.TabIndex = 45;
@@ -644,102 +728,20 @@
             this.label17.TabIndex = 41;
             this.label17.Text = "First Name";
             // 
-            // groupBox2
+            // tabPage3
             // 
-            this.groupBox2.Controls.Add(this.btnSearchUser);
-            this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.txtSearchById);
-            this.groupBox2.Controls.Add(this.txtSearchByUserName);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(10, 244);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(311, 116);
-            this.groupBox2.TabIndex = 49;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Search By";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            this.tabPage3.BackColor = System.Drawing.Color.Black;
+            this.tabPage3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(768, 363);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "list Users";
             // 
-            // label19
+            // ErrrEmpty
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label19.Location = new System.Drawing.Point(6, 54);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(85, 16);
-            this.label19.TabIndex = 52;
-            this.label19.Text = "User Name";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label18.Location = new System.Drawing.Point(6, 19);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(22, 16);
-            this.label18.TabIndex = 51;
-            this.label18.Text = "ID";
-            // 
-            // txtSearchById
-            // 
-            this.txtSearchById.Location = new System.Drawing.Point(113, 15);
-            this.txtSearchById.Name = "txtSearchById";
-            this.txtSearchById.Size = new System.Drawing.Size(100, 20);
-            this.txtSearchById.TabIndex = 9;
-            this.txtSearchById.Tag = "false";
-            // 
-            // txtSearchByUserName
-            // 
-            this.txtSearchByUserName.Location = new System.Drawing.Point(113, 50);
-            this.txtSearchByUserName.Name = "txtSearchByUserName";
-            this.txtSearchByUserName.Size = new System.Drawing.Size(100, 20);
-            this.txtSearchByUserName.TabIndex = 10;
-            this.txtSearchByUserName.Tag = "false";
-            // 
-            // btnEditUser
-            // 
-            this.btnEditUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEditUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnEditUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnEditUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditUser.Location = new System.Drawing.Point(575, 321);
-            this.btnEditUser.Name = "btnEditUser";
-            this.btnEditUser.Size = new System.Drawing.Size(75, 23);
-            this.btnEditUser.TabIndex = 12;
-            this.btnEditUser.Text = "Edit";
-            this.btnEditUser.UseVisualStyleBackColor = true;
-            // 
-            // btnSearchUser
-            // 
-            this.btnSearchUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSearchUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnSearchUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnSearchUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSearchUser.Location = new System.Drawing.Point(220, 77);
-            this.btnSearchUser.Name = "btnSearchUser";
-            this.btnSearchUser.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchUser.TabIndex = 11;
-            this.btnSearchUser.Text = "Search";
-            this.btnSearchUser.UseVisualStyleBackColor = true;
-            // 
-            // btnSaveUser
-            // 
-            this.btnSaveUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSaveUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnSaveUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnSaveUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSaveUser.Location = new System.Drawing.Point(683, 321);
-            this.btnSaveUser.Name = "btnSaveUser";
-            this.btnSaveUser.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveUser.TabIndex = 13;
-            this.btnSaveUser.Text = "Save";
-            this.btnSaveUser.UseVisualStyleBackColor = true;
+            this.ErrrEmpty.ContainerControl = this;
             // 
             // userMangmentForm
             // 
@@ -758,11 +760,11 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ErrrEmpty)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.gbInfromation.ResumeLayout(false);
+            this.gbInfromation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrrEmpty)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -795,11 +797,11 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.ErrorProvider ErrrEmpty;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbInfromation;
         private System.Windows.Forms.TextBox txtFindEmail;
         private System.Windows.Forms.TextBox txtFindPhone;
         private System.Windows.Forms.TextBox txtFindID;
-        private CircularProgressBar.CircularProgressBar circularProgressBar1;
+        private CircularProgressBar.CircularProgressBar progressTotalFind;
         private System.Windows.Forms.DateTimePicker dtFindDateOfBirth;
         private System.Windows.Forms.TextBox txtFindAddress;
         private System.Windows.Forms.TextBox txtFindFirstName;
