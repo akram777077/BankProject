@@ -45,8 +45,12 @@ namespace BankProject
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you for adding " + txtUserName.Text + " on the system ?", "validation", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                return;
             Globale.listUsers.addUser(getUserWithInfromation());
-            
+            userMangmentForm_Load(sender, e);
+
+
         }
 
         private void crProgress_Click(object sender, EventArgs e)
@@ -60,7 +64,7 @@ namespace BankProject
         }
         private int ProgressOfUnit(TextBox a,int value)
         {
-            if (a.Tag.ToString()=="true")
+            if (a.Tag.ToString() == "true")
                 return value;
             return 0;
         }
@@ -89,6 +93,22 @@ namespace BankProject
             crProgress.Value = 0;
             button1.Enabled = false;
             dtDateOfBirth.Value = DateTime.Now;
+            txtId.Clear();
+            ErrrEmpty.SetError(txtId, "");
+            txtUserName.Clear();
+            ErrrEmpty.SetError(txtUserName, "");
+            txtPassword.Clear();
+            ErrrEmpty.SetError(txtPassword, "");
+            txtPhone.Clear();
+            ErrrEmpty.SetError(txtPhone, "");
+            txtEmail.Clear();
+            ErrrEmpty.SetError(txtEmail, "");
+            txtAddress.Clear();
+            ErrrEmpty.SetError(txtAddress, "");
+            txtFirstName.Clear();
+            ErrrEmpty.SetError(txtFirstName, "");
+            txtLastName.Clear();
+            ErrrEmpty.SetError(txtLastName, "");
         }
         private bool valideID(string id)
         {
