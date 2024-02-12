@@ -140,6 +140,11 @@ namespace BankProject
                 ErrrEmpty.SetError(txtId, Value);
                 ((TextBox)sender).Tag = "false";
             }
+            else if(Globale.listUsers.getUserID(txtId.Text.ToString()) != null)
+            {
+                ErrrEmpty.SetError(txtId, "This user is in the system try other id");
+                ((TextBox)sender).Tag = "false";
+            }
             else
             {
                 ErrrEmpty.SetError(txtId, "");
@@ -154,6 +159,11 @@ namespace BankProject
             if (txtUserName.Text.Length == 0)
             {
                 ErrrEmpty.SetError(txtUserName, "non Empty Value");
+                ((TextBox)sender).Tag = "false";
+            }
+            else if (Globale.listUsers.getUserUserName(txtUserName.Text.ToString()) != null)
+            {
+                ErrrEmpty.SetError(txtUserName, "This user is in the system try other id");
                 ((TextBox)sender).Tag = "false";
             }
             else
