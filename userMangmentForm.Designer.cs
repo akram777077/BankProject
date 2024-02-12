@@ -55,9 +55,40 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.ErrrEmpty = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFindEmail = new System.Windows.Forms.TextBox();
+            this.txtFindPhone = new System.Windows.Forms.TextBox();
+            this.txtFindID = new System.Windows.Forms.TextBox();
+            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
+            this.dtFindDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.txtFindAddress = new System.Windows.Forms.TextBox();
+            this.txtFindFirstName = new System.Windows.Forms.TextBox();
+            this.txtFindLastName = new System.Windows.Forms.TextBox();
+            this.txtFindUserName = new System.Windows.Forms.TextBox();
+            this.txtFindPassword = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtSearchById = new System.Windows.Forms.TextBox();
+            this.txtSearchByUserName = new System.Windows.Forms.TextBox();
+            this.btnEditUser = new System.Windows.Forms.Button();
+            this.btnSearchUser = new System.Windows.Forms.Button();
+            this.btnSaveUser = new System.Windows.Forms.Button();
             this.x.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ErrrEmpty)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExit
@@ -128,7 +159,8 @@
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 3;
             this.txtEmail.Tag = "false";
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);            // 
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(422, 173);
@@ -211,7 +243,8 @@
             this.txtAddress.Size = new System.Drawing.Size(100, 20);
             this.txtAddress.TabIndex = 4;
             this.txtAddress.Tag = "false";
-            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);            // 
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
+            // 
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(644, 49);
@@ -219,7 +252,8 @@
             this.txtFirstName.Size = new System.Drawing.Size(100, 20);
             this.txtFirstName.TabIndex = 6;
             this.txtFirstName.Tag = "false";
-            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);            // 
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
+            // 
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(644, 105);
@@ -349,6 +383,10 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Black;
+            this.tabPage2.Controls.Add(this.btnSaveUser);
+            this.tabPage2.Controls.Add(this.btnEditUser);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -372,6 +410,337 @@
             // 
             this.ErrrEmpty.ContainerControl = this;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtFindEmail);
+            this.groupBox1.Controls.Add(this.txtFindPhone);
+            this.groupBox1.Controls.Add(this.txtFindID);
+            this.groupBox1.Controls.Add(this.circularProgressBar1);
+            this.groupBox1.Controls.Add(this.dtFindDateOfBirth);
+            this.groupBox1.Controls.Add(this.txtFindAddress);
+            this.groupBox1.Controls.Add(this.txtFindFirstName);
+            this.groupBox1.Controls.Add(this.txtFindLastName);
+            this.groupBox1.Controls.Add(this.txtFindUserName);
+            this.groupBox1.Controls.Add(this.txtFindPassword);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(759, 223);
+            this.groupBox1.TabIndex = 48;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Infromation";
+            // 
+            // txtFindEmail
+            // 
+            this.txtFindEmail.Location = new System.Drawing.Point(430, 60);
+            this.txtFindEmail.Name = "txtFindEmail";
+            this.txtFindEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtFindEmail.TabIndex = 3;
+            this.txtFindEmail.Tag = "false";
+            // 
+            // txtFindPhone
+            // 
+            this.txtFindPhone.Location = new System.Drawing.Point(430, 184);
+            this.txtFindPhone.Name = "txtFindPhone";
+            this.txtFindPhone.Size = new System.Drawing.Size(100, 20);
+            this.txtFindPhone.TabIndex = 5;
+            this.txtFindPhone.Tag = "false";
+            // 
+            // txtFindID
+            // 
+            this.txtFindID.Location = new System.Drawing.Point(215, 68);
+            this.txtFindID.Name = "txtFindID";
+            this.txtFindID.Size = new System.Drawing.Size(100, 20);
+            this.txtFindID.TabIndex = 0;
+            this.txtFindID.Tag = "false";
+            // 
+            // circularProgressBar1
+            // 
+            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularProgressBar1.AnimationSpeed = 500;
+            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.circularProgressBar1.InnerMargin = 2;
+            this.circularProgressBar1.InnerWidth = -1;
+            this.circularProgressBar1.Location = new System.Drawing.Point(4, 17);
+            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
+            this.circularProgressBar1.Name = "circularProgressBar1";
+            this.circularProgressBar1.OuterColor = System.Drawing.Color.DimGray;
+            this.circularProgressBar1.OuterMargin = 3;
+            this.circularProgressBar1.OuterWidth = -8;
+            this.circularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.circularProgressBar1.ProgressWidth = 5;
+            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Impact", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularProgressBar1.Size = new System.Drawing.Size(100, 93);
+            this.circularProgressBar1.StartAngle = 270;
+            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.circularProgressBar1.SubscriptText = ".23";
+            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.circularProgressBar1.SuperscriptText = "°C";
+            this.circularProgressBar1.TabIndex = 59;
+            this.circularProgressBar1.Text = "0%";
+            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.circularProgressBar1.Value = 68;
+            // 
+            // dtFindDateOfBirth
+            // 
+            this.dtFindDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFindDateOfBirth.Location = new System.Drawing.Point(652, 185);
+            this.dtFindDateOfBirth.Name = "dtFindDateOfBirth";
+            this.dtFindDateOfBirth.Size = new System.Drawing.Size(100, 20);
+            this.dtFindDateOfBirth.TabIndex = 8;
+            this.dtFindDateOfBirth.Value = new System.DateTime(2024, 2, 10, 10, 2, 15, 0);
+            // 
+            // txtFindAddress
+            // 
+            this.txtFindAddress.Location = new System.Drawing.Point(430, 120);
+            this.txtFindAddress.Name = "txtFindAddress";
+            this.txtFindAddress.Size = new System.Drawing.Size(100, 20);
+            this.txtFindAddress.TabIndex = 4;
+            this.txtFindAddress.Tag = "false";
+            // 
+            // txtFindFirstName
+            // 
+            this.txtFindFirstName.Location = new System.Drawing.Point(652, 60);
+            this.txtFindFirstName.Name = "txtFindFirstName";
+            this.txtFindFirstName.Size = new System.Drawing.Size(100, 20);
+            this.txtFindFirstName.TabIndex = 6;
+            this.txtFindFirstName.Tag = "false";
+            // 
+            // txtFindLastName
+            // 
+            this.txtFindLastName.Location = new System.Drawing.Point(652, 116);
+            this.txtFindLastName.Name = "txtFindLastName";
+            this.txtFindLastName.Size = new System.Drawing.Size(100, 20);
+            this.txtFindLastName.TabIndex = 7;
+            this.txtFindLastName.Tag = "false";
+            // 
+            // txtFindUserName
+            // 
+            this.txtFindUserName.Location = new System.Drawing.Point(215, 124);
+            this.txtFindUserName.Name = "txtFindUserName";
+            this.txtFindUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtFindUserName.TabIndex = 1;
+            this.txtFindUserName.Tag = "false";
+            // 
+            // txtFindPassword
+            // 
+            this.txtFindPassword.Location = new System.Drawing.Point(215, 185);
+            this.txtFindPassword.Name = "txtFindPassword";
+            this.txtFindPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtFindPassword.TabIndex = 2;
+            this.txtFindPassword.Tag = "false";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(550, 185);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 16);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "Date Of Birth";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label10.Location = new System.Drawing.Point(342, 121);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 16);
+            this.label10.TabIndex = 56;
+            this.label10.Text = "address";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label11.Location = new System.Drawing.Point(342, 65);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 16);
+            this.label11.TabIndex = 54;
+            this.label11.Text = "Email";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label12.Location = new System.Drawing.Point(342, 186);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 16);
+            this.label12.TabIndex = 51;
+            this.label12.Text = "Phone";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label13.Location = new System.Drawing.Point(114, 189);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(75, 16);
+            this.label13.TabIndex = 49;
+            this.label13.Text = "Password";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Location = new System.Drawing.Point(114, 124);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(85, 16);
+            this.label14.TabIndex = 47;
+            this.label14.Text = "User Name";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label15.Location = new System.Drawing.Point(114, 68);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(22, 16);
+            this.label15.TabIndex = 45;
+            this.label15.Text = "ID";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label16.Location = new System.Drawing.Point(551, 120);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(81, 16);
+            this.label16.TabIndex = 43;
+            this.label16.Text = "Last Name";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label17.Location = new System.Drawing.Point(550, 64);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(82, 16);
+            this.label17.TabIndex = 41;
+            this.label17.Text = "First Name";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnSearchUser);
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.txtSearchById);
+            this.groupBox2.Controls.Add(this.txtSearchByUserName);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(10, 244);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(311, 116);
+            this.groupBox2.TabIndex = 49;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Search By";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label19.Location = new System.Drawing.Point(6, 54);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(85, 16);
+            this.label19.TabIndex = 52;
+            this.label19.Text = "User Name";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label18.Location = new System.Drawing.Point(6, 19);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(22, 16);
+            this.label18.TabIndex = 51;
+            this.label18.Text = "ID";
+            // 
+            // txtSearchById
+            // 
+            this.txtSearchById.Location = new System.Drawing.Point(113, 15);
+            this.txtSearchById.Name = "txtSearchById";
+            this.txtSearchById.Size = new System.Drawing.Size(100, 20);
+            this.txtSearchById.TabIndex = 9;
+            this.txtSearchById.Tag = "false";
+            // 
+            // txtSearchByUserName
+            // 
+            this.txtSearchByUserName.Location = new System.Drawing.Point(113, 50);
+            this.txtSearchByUserName.Name = "txtSearchByUserName";
+            this.txtSearchByUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtSearchByUserName.TabIndex = 10;
+            this.txtSearchByUserName.Tag = "false";
+            // 
+            // btnEditUser
+            // 
+            this.btnEditUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEditUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnEditUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnEditUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEditUser.Location = new System.Drawing.Point(575, 321);
+            this.btnEditUser.Name = "btnEditUser";
+            this.btnEditUser.Size = new System.Drawing.Size(75, 23);
+            this.btnEditUser.TabIndex = 12;
+            this.btnEditUser.Text = "Edit";
+            this.btnEditUser.UseVisualStyleBackColor = true;
+            // 
+            // btnSearchUser
+            // 
+            this.btnSearchUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSearchUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSearchUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnSearchUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSearchUser.Location = new System.Drawing.Point(220, 77);
+            this.btnSearchUser.Name = "btnSearchUser";
+            this.btnSearchUser.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchUser.TabIndex = 11;
+            this.btnSearchUser.Text = "Search";
+            this.btnSearchUser.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveUser
+            // 
+            this.btnSaveUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSaveUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSaveUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnSaveUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSaveUser.Location = new System.Drawing.Point(683, 321);
+            this.btnSaveUser.Name = "btnSaveUser";
+            this.btnSaveUser.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveUser.TabIndex = 13;
+            this.btnSaveUser.Text = "Save";
+            this.btnSaveUser.UseVisualStyleBackColor = true;
+            // 
             // userMangmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,7 +757,12 @@
             this.x.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ErrrEmpty)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -421,5 +795,33 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.ErrorProvider ErrrEmpty;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtFindEmail;
+        private System.Windows.Forms.TextBox txtFindPhone;
+        private System.Windows.Forms.TextBox txtFindID;
+        private CircularProgressBar.CircularProgressBar circularProgressBar1;
+        private System.Windows.Forms.DateTimePicker dtFindDateOfBirth;
+        private System.Windows.Forms.TextBox txtFindAddress;
+        private System.Windows.Forms.TextBox txtFindFirstName;
+        private System.Windows.Forms.TextBox txtFindLastName;
+        private System.Windows.Forms.TextBox txtFindUserName;
+        private System.Windows.Forms.TextBox txtFindPassword;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtSearchById;
+        private System.Windows.Forms.TextBox txtSearchByUserName;
+        private System.Windows.Forms.Button btnSaveUser;
+        private System.Windows.Forms.Button btnEditUser;
+        private System.Windows.Forms.Button btnSearchUser;
     }
 }
