@@ -93,6 +93,7 @@ namespace BankProject
             crProgress.Value = 0;
             button1.Enabled = false;
             dtDateOfBirth.Value = DateTime.Now;
+            dtFindDateOfBirth.Value = DateTime.Now;
             txtId.Clear();
             ErrrEmpty.SetError(txtId, "");
             txtUserName.Clear();
@@ -109,20 +110,25 @@ namespace BankProject
             ErrrEmpty.SetError(txtFirstName, "");
             txtLastName.Clear();
             ErrrEmpty.SetError(txtLastName, "");
-            DesableFindUser();
+            DesableFindUser(false);
+            progressTotalFind.Value = 0;
+            rbtnIDSearch.Checked = true;
+            txtSearchByUserName.Enabled = false;
+            btnEditUser.Enabled = false;
+            btnSaveUser.Enabled = false;
             
         }
-        private void DesableFindUser()
+        private void DesableFindUser(bool option)
         {
-            txtFindAddress.Enabled = false;
-            txtFindFirstName.Enabled = false;
-            txtFindLastName.Enabled = false;
-            txtFindEmail.Enabled = false;
-            txtFindID.Enabled = false;
-            txtFindUserName.Enabled = false;
-            txtFindPassword.Enabled = false;
-            txtFindPhone.Enabled = false;
-            dtFindDateOfBirth.Enabled = false;
+            txtFindAddress.Enabled = option;
+            txtFindFirstName.Enabled = option;
+            txtFindLastName.Enabled = option;
+            txtFindEmail.Enabled = option;
+            txtFindID.Enabled = option;
+            txtFindUserName.Enabled = option;
+            txtFindPassword.Enabled = option;
+            txtFindPhone.Enabled = option;
+            dtFindDateOfBirth.Enabled = option;
         }
         private bool valideID(string id)
         {
@@ -139,104 +145,112 @@ namespace BankProject
         }
         private void txtId_TextChanged(object sender, EventArgs e)
         {
-            if (txtId.Text.Length == 0)
+            bool test= ((TextBox)sender)==txtFindID && txtFindID.Text.Equals(TargetFound.Id);
+            if (((TextBox)sender).Text.Length == 0)
             {
-                ErrrEmpty.SetError(txtId, "non Empty Value");
+                ErrrEmpty.SetError(((TextBox)sender), "non Empty Value");
                 ((TextBox)sender).Tag = "false";
             }
-            else if(!valideID(txtId.Text.ToString()))
+            else if(!valideID(((TextBox)sender).Text.ToString()))
             {
-                ErrrEmpty.SetError(txtId, "Enter Numeric Value");
+                ErrrEmpty.SetError(((TextBox)sender), "Enter Numeric Value");
                 ((TextBox)sender).Tag = "false";
             }
-            else if(txtId.Text.Length!=8)
+            else if(((TextBox)sender).Text.Length!=8)
             {
-                ErrrEmpty.SetError(txtId, Value);
+                ErrrEmpty.SetError(((TextBox)sender), Value);
                 ((TextBox)sender).Tag = "false";
             }
-            else if(Globale.listUsers.getUserID(txtId.Text.ToString()) != null)
+            else if(Globale.listUsers.getUserID(((TextBox)sender).Text.ToString()) != null && !test)
             {
-                ErrrEmpty.SetError(txtId, "This user is in the system try other id");
+
+                ErrrEmpty.SetError(((TextBox)sender), "This user is in the system try other id");
                 ((TextBox)sender).Tag = "false";
             }
             else
             {
-                ErrrEmpty.SetError(txtId, "");
+                ErrrEmpty.SetError(((TextBox)sender), "");
                 ((TextBox)sender).Tag = "true";
             }
-            addProgress();
+            refrechProgress(sender, txtId);
+
 
         }
 
         private void txtUserName_TextChanged(object sender, EventArgs e)
         {
-            if (txtUserName.Text.Length == 0)
+            bool test = ((TextBox)sender) == txtFindUserName && txtFindUserName.Text.Equals(TargetFound.UserName);
+            if (((TextBox)sender).Text.Length == 0)
             {
-                ErrrEmpty.SetError(txtUserName, "non Empty Value");
+                ErrrEmpty.SetError(((TextBox)sender), "non Empty Value");
                 ((TextBox)sender).Tag = "false";
             }
-            else if (Globale.listUsers.getUserUserName(txtUserName.Text.ToString()) != null)
+            else if (Globale.listUsers.getUserUserName(((TextBox)sender).Text.ToString()) != null && !test)
             {
-                ErrrEmpty.SetError(txtUserName, "This user is in the system try other id");
+                ErrrEmpty.SetError(((TextBox)sender), "This user is in the system try other user");
                 ((TextBox)sender).Tag = "false";
             }
             else
             {
-                ErrrEmpty.SetError(txtUserName, "");
+                ErrrEmpty.SetError(((TextBox)sender), "");
                 ((TextBox)sender).Tag = "true";
             }
-            addProgress();
+            refrechProgress(sender, txtUserName);
+
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            if (txtPassword.Text.Length == 0)
+            if (((TextBox)sender).Text.Length == 0)
             {
-                ErrrEmpty.SetError(txtPassword, "non Empty Value");
+                ErrrEmpty.SetError(((TextBox)sender), "non Empty Value");
                 ((TextBox)sender).Tag = "false";
             }
-            else if(txtPassword.Text.Length > 16 || txtPassword.Text.Length <8)
+            else if(((TextBox)sender).Text.Length > 16 || ((TextBox)sender).Text.Length <8)
             {
-                ErrrEmpty.SetError(txtPassword, "password in range [8,16]");
+                ErrrEmpty.SetError(((TextBox)sender), "password in range [8,16]");
                 ((TextBox)sender).Tag = "false";
 
             }
             else
             {
-                ErrrEmpty.SetError(txtPassword, "");
+                ErrrEmpty.SetError(((TextBox)sender), "");
                 ((TextBox)sender).Tag = "true";
             }
-            addProgress();
+            refrechProgress(sender, txtPassword);
+
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            if (txtEmail.Text.Length == 0)
+            if (((TextBox)sender).Text.Length == 0)
             {
-                ErrrEmpty.SetError(txtEmail, "non Empty Value");
+                ErrrEmpty.SetError(((TextBox)sender), "non Empty Value");
                 ((TextBox)sender).Tag = "false";
             }
             else
             {
-                ErrrEmpty.SetError(txtEmail, "");
+                ErrrEmpty.SetError(((TextBox)sender), "");
                 ((TextBox)sender).Tag = "true";
             }
-            addProgress();
+            refrechProgress(sender, txtEmail);
+
         }
 
         private void txtAddress_TextChanged(object sender, EventArgs e)
         {
-            if (txtAddress.Text.Length == 0)
+            if (((TextBox)sender).Text.Length == 0)
             {
-                ErrrEmpty.SetError(txtAddress, "non Empty Value");
+                ErrrEmpty.SetError(((TextBox)sender), "non Empty Value");
                 ((TextBox)sender).Tag = "false";
             }
             else
             {
-                ErrrEmpty.SetError(txtAddress, "");
+                ErrrEmpty.SetError(((TextBox)sender), "");
                 ((TextBox)sender).Tag = "true";
             }
-            addProgress();
+            refrechProgress(sender, txtAddress);
+
         }
         private bool testPhone(string phone)
         {
@@ -253,63 +267,72 @@ namespace BankProject
         }
         private void txtPhone_TextChanged(object sender, EventArgs e)
         {
-            if (txtPhone.Text.Length == 0)
+            if (((TextBox)sender).Text.Length == 0)
             {
-                ErrrEmpty.SetError(txtPhone, "non Empty Value");
+                ErrrEmpty.SetError(((TextBox)sender), "non Empty Value");
                 ((TextBox)sender).Tag = "false";
             }
-            else if(!testPhone(txtPhone.Text.ToString()))
+            else if(!testPhone(((TextBox)sender).Text.ToString()))
             {
-                ErrrEmpty.SetError(txtPhone, "non char input..");
+                ErrrEmpty.SetError(((TextBox)sender), "non char input..");
                 ((TextBox)sender).Tag = "false";
             }
-            else if(txtPhone.Text.Length != 10)
+            else if(((TextBox)sender).Text.Length != 10)
             {
-                ErrrEmpty.SetError(txtPhone, Value1);
+                ErrrEmpty.SetError(((TextBox)sender), Value1);
                 ((TextBox)sender).Tag = "false";
             }
-            else if(txtPhone.Text[0] !='0' || (txtPhone.Text[1] != '7' && txtPhone.Text[1] != '5' && txtPhone.Text[1] != '6'))
+            else if(((TextBox)sender).Text[0] !='0' || (((TextBox)sender).Text[1] != '7' && ((TextBox)sender).Text[1] != '5' && ((TextBox)sender).Text[1] != '6'))
             {
-                ErrrEmpty.SetError(txtPhone, "phone is wrong");
+                ErrrEmpty.SetError(((TextBox)sender), "phone is wrong");
                 ((TextBox)sender).Tag = "false";
             }
             else
             {
-                ErrrEmpty.SetError(txtPhone, "");
+                ErrrEmpty.SetError(((TextBox)sender), "");
                 ((TextBox)sender).Tag = "true";
             }
-            addProgress();
+            refrechProgress(sender, txtPhone);
+
         }
 
         private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
-            if (txtFirstName.Text.Length == 0)
+            if (((TextBox)sender).Text.Length == 0)
             {
-                ErrrEmpty.SetError(txtFirstName, "non Empty Value");
+                ErrrEmpty.SetError(((TextBox)sender), "non Empty Value");
                 ((TextBox)sender).Tag = "false";
             }
             else
             {
-                ErrrEmpty.SetError(txtFirstName, "");
+                ErrrEmpty.SetError(((TextBox)sender), "");
                 ((TextBox)sender).Tag = "true";
             }
-            addProgress();
+            refrechProgress(sender, txtFirstName);
+
 
         }
 
         private void txtLastName_TextChanged(object sender, EventArgs e)
         {
-            if (txtLastName.Text.Length == 0)
+            if (((TextBox)sender).Text.Length == 0)
             {
-                ErrrEmpty.SetError(txtLastName, "non Empty Value");
+                ErrrEmpty.SetError(((TextBox)sender), "non Empty Value");
                 ((TextBox)sender).Tag = "false";
             }
             else
             {
-                ErrrEmpty.SetError(txtLastName, "");
+                ErrrEmpty.SetError(((TextBox)sender), "");
                 ((TextBox)sender).Tag = "true";
             }
-            addProgress();
+            refrechProgress(sender,txtLastName);
+        }
+        private void refrechProgress(object sender,TextBox target)
+        {
+            if (((TextBox)sender) == target)
+                addProgress();
+            else
+                calcProgressTotalFind();
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -326,6 +349,22 @@ namespace BankProject
         {
 
         }
+        private void  calcProgressTotalFind()
+        {
+            int t = 0;
+            t += ProgressOfUnit(txtFindID, 10);
+            t += ProgressOfUnit(txtFindUserName, 20);
+            t += ProgressOfUnit(txtFindPassword, 20);
+            t += ProgressOfUnit(txtFindPhone, 10);
+            t += ProgressOfUnit(txtFindEmail, 10);
+            t += ProgressOfUnit(txtFindAddress, 10);
+            t += ProgressOfUnit(txtFindFirstName, 10);
+            t += ProgressOfUnit(txtFindLastName, 10);
+            progressTotalFind.Value= t;
+            progressTotalFind.Text = t.ToString() + "%";
+            btnSaveUser.Enabled = (progressTotalFind.Value == 100 && !btnSearchUser.Enabled);
+            
+        }
         void fillTheTextBoxWithUser(User target)
         {
             txtFindAddress.Text = target.Address;
@@ -337,20 +376,128 @@ namespace BankProject
             txtFindPassword.Text = target.Password;
             txtFindPhone.Text = target.Phone;
             dtFindDateOfBirth.Text = target.DateOfBirth.ToString();
-            progressTotalFind.Text = "100%";
-            progressTotalFind.Value = 100;
+            calcProgressTotalFind();
+            progressTotalFind.Text = progressTotalFind.Value.ToString()+"%";
         }
+        private void clearTexts()
+        {
+            txtFindAddress.Clear();
+            txtFindFirstName.Clear();
+            txtFindLastName.Clear();
+            txtFindEmail.Clear();
+            txtFindID.Clear();
+            txtFindUserName.Clear();
+            txtFindPassword.Clear();
+            txtFindPhone.Clear();
+            dtFindDateOfBirth.Value = DateTime.Now;
+        }
+        private User TargetFound;
         private void btnSearchUser_Click(object sender, EventArgs e)
         {
-            if(txtSearchById.Text.Length == 0 && txtSearchByUserName.Text.Length == 0)
+            User target = (rbtnIDSearch.Checked)?Globale.listUsers.getUserID(txtSearchById.Text):Globale.listUsers.getUserUserName(txtSearchByUserName.Text);
+            if (target == null)
             {
-                return;
+                ErrrEmpty.SetError(btnSearchUser, "This user is not in the system");
+                clearTexts();
+                progressTotalFind.Text = "0%";
+                progressTotalFind.Value = 0;
             }
             else
             {
-                User target = Globale.listUsers.getUserID(txtSearchById.Text);
+                TargetFound = target;
                 fillTheTextBoxWithUser(target);
+                ErrrEmpty.SetError(btnSearchUser, "");
+                btnEditUser.Enabled = true;
+
             }
+        }
+        private void NOEmptySomthing(TextBox test)
+        {
+            if (string.IsNullOrEmpty(test.Text))
+                test.Tag = "false";
+            else
+                test.Tag = "true";
+        }
+        private void txtFindID_TextChanged(object sender, EventArgs e)
+        {
+            NOEmptySomthing((TextBox)sender);
+        }
+
+        private void txtFindUserName_TextChanged(object sender, EventArgs e)
+        {
+
+            NOEmptySomthing((TextBox)sender);
+        }
+
+        private void txtFindPassword_TextChanged(object sender, EventArgs e)
+        {
+            NOEmptySomthing((TextBox)sender);
+
+        }
+
+        private void txtFindEmail_TextChanged(object sender, EventArgs e)
+        {
+            NOEmptySomthing((TextBox)sender);
+
+        }
+
+        private void txtFindAddress_TextChanged(object sender, EventArgs e)
+        {
+            NOEmptySomthing((TextBox)sender);
+
+        }
+
+        private void txtFindPhone_TextChanged(object sender, EventArgs e)
+        {
+            NOEmptySomthing((TextBox)sender);
+
+        }
+
+        private void txtFindFirstName_TextChanged(object sender, EventArgs e)
+        {
+            NOEmptySomthing((TextBox)sender);
+
+        }
+
+        private void txtFindLastName_TextChanged(object sender, EventArgs e)
+        {
+            NOEmptySomthing((TextBox)sender);
+            
+        }
+
+        private void rbtnIDSearch_CheckedChanged(object sender, EventArgs e)
+        {
+            txtSearchById.Enabled = rbtnIDSearch.Checked;
+            txtSearchByUserName.Clear();
+        }
+
+        private void rdbtnUserNameSearch_CheckedChanged(object sender, EventArgs e)
+        {
+            txtSearchByUserName.Enabled = rbtnUserNameSearch.Checked;
+            txtSearchById.Clear();
+
+        }
+
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            DesableFindUser(true);
+            btnEditUser.Enabled = false;
+            btnSaveUser.Enabled = true;
+            txtSearchById.Enabled = false;
+            txtSearchByUserName.Enabled = false;
+            btnSearchUser.Enabled = false;
+        }
+
+        private void btnSaveUser_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure for Edit this user", "confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                return;
+            btnEditUser.Enabled = true;
+            btnSaveUser.Enabled = false;
+            DesableFindUser(false);
+            txtSearchById.Enabled = true;
+            txtSearchByUserName.Enabled = true;
+            btnSearchUser.Enabled = true;
         }
     }
 }
