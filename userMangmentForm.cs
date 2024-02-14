@@ -392,6 +392,7 @@ namespace BankProject
             dtFindDateOfBirth.Value = DateTime.Now;
         }
         private User TargetFound;
+        private int indexTargetFound;
         private void btnSearchUser_Click(object sender, EventArgs e)
         {
             
@@ -407,6 +408,7 @@ namespace BankProject
             else
             {
                 TargetFound = target;
+                indexTargetFound = index;
                 fillTheTextBoxWithUser(target);
                 ErrrEmpty.SetError(btnSearchUser, "");
                 btnEditUser.Enabled = true;
@@ -489,7 +491,12 @@ namespace BankProject
             txtSearchByUserName.Enabled = false;
             btnSearchUser.Enabled = false;
         }
-
+        private void editUser()
+        {
+            DateTime.TryParse(dtFindDateOfBirth.Value.ToShortDateString(), out DateTime date);
+            User temp = new User(txtFindID.Text, txtFindFirstName.Text, txtFindLastName.Text, txtFindUserName.Text, txtFindPassword.Text, txtFindEmail.Text, txtFindPhone.Text, txtFindAddress.Text, date);
+            Globale.listUsers.changeUser(indexTargetFound, temp);
+        }
         private void btnSaveUser_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure for Edit this user", "confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
@@ -500,6 +507,7 @@ namespace BankProject
             txtSearchById.Enabled = true;
             txtSearchByUserName.Enabled = true;
             btnSearchUser.Enabled = true;
+            editUser();
         }
     }
 }

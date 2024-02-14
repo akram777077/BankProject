@@ -70,4 +70,9 @@ public class Users
 	{
 		return (index!=-1)?_users[index]:null;
 	}
+	public void changeUser(int index,User newUser)
+	{
+		_users[index] = newUser;
+		save();
+	}
 }
