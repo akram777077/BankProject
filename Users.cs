@@ -26,23 +26,23 @@ public class Users
 		_users.Add(user);
 		save();
 	}
-	public User getUserID(string ID)
+	public int getUserID(string ID)
 	{
 		for(int i=0;i<_users.Count;i++)
 		{
 			if (_users[i].Id == ID)
-				return _users[i]; 
+				return i; 
 		}
-		return null;
+		return -1;
 	}
-	public User getUserUserName(string UserName)
+	public int getUserUserName(string UserName)
 	{
         for (int i = 0; i<_users.Count; i++)
         {
-            if (_users[i].UserName == UserName)
-                return _users[i];
+			if (_users[i].UserName == UserName)
+				return i;
         }
-        return null;
+        return -1;
     }
 	public void deleteUserID(User target)
 	{
@@ -65,5 +65,9 @@ public class Users
 	public void clearFile()
 	{
 		File.Delete(this._fileName);
+	}
+	public User getUserByIndex(int index)
+	{
+		return (index!=-1)?_users[index]:null;
 	}
 }

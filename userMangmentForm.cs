@@ -394,7 +394,9 @@ namespace BankProject
         private User TargetFound;
         private void btnSearchUser_Click(object sender, EventArgs e)
         {
-            User target = (rbtnIDSearch.Checked)?Globale.listUsers.getUserID(txtSearchById.Text):Globale.listUsers.getUserUserName(txtSearchByUserName.Text);
+            
+            int index=(rbtnIDSearch.Checked)?Globale.listUsers.getUserID(txtSearchById.Text):Globale.listUsers.getUserUserName(txtSearchByUserName.Text);
+            User target = Globale.listUsers.getUserByIndex(index);
             if (target == null)
             {
                 ErrrEmpty.SetError(btnSearchUser, "This user is not in the system");

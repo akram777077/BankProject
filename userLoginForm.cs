@@ -54,7 +54,8 @@ namespace BankProject
         }
         private bool isValidUser(string username,string password)
         {
-            User current = Globale.listUsers.getUserUserName(username);
+            int index= Globale.listUsers.getUserUserName(username);
+            User current = Globale.listUsers.getUserByIndex(index);
             if (current != null && current.Password == password)
             {
                 Globale.currentUser = current;
