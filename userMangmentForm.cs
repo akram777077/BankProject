@@ -41,6 +41,7 @@ namespace BankProject
             user.LastName = txtLastName.Text;
             DateTime.TryParse(dtDateOfBirth.Text, out DateTime dtBirth);
             user.DateOfBirth = dtBirth;
+            user.Address = txtAddress.Text;
             return user;
         }
         private void button1_Click(object sender, EventArgs e)
@@ -185,7 +186,7 @@ namespace BankProject
                 ErrrEmpty.SetError(((TextBox)sender), "non Empty Value");
                 ((TextBox)sender).Tag = "false";
             }
-            else if (Globale.listUsers.getUserUserName(((TextBox)sender).Text.ToString()) != null && !test)
+            else if (Globale.listUsers.getUserUserName(((TextBox)sender).Text.ToString()) != -1 && !test)
             {
                 ErrrEmpty.SetError(((TextBox)sender), "This user is in the system try other user");
                 ((TextBox)sender).Tag = "false";
