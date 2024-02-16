@@ -161,7 +161,7 @@ namespace BankProject
                 ErrrEmpty.SetError(((TextBox)sender), Value);
                 ((TextBox)sender).Tag = "false";
             }
-            else if(Globale.listUsers.getUserID(((TextBox)sender).Text.ToString()) != null && !test)
+            else if(Globale.listUsers.getUserID(((TextBox)sender).Text.ToString()) != -1 && !test)
             {
 
                 ErrrEmpty.SetError(((TextBox)sender), "This user is in the system try other id");
