@@ -395,6 +395,21 @@ namespace BankProject
         }
         private User TargetFound;
         private int indexTargetFound;
+        private void removeError(TextBox  sender)
+        {
+            ErrrEmpty.SetError(sender, "");
+        }
+        private void romveErorAll()
+        {
+            removeError(txtFindID);
+            removeError(txtFindUserName);
+            removeError(txtFindPassword);
+            removeError(txtFindPhone);
+            removeError(txtFindEmail);
+            removeError(txtFindAddress);
+            removeError(txtFindFirstName);
+            removeError(txtFindLastName);
+        }
         private void btnSearchUser_Click(object sender, EventArgs e)
         {
             
@@ -408,6 +423,7 @@ namespace BankProject
                 progressTotalFind.Value = 0;
                 btnDelete.Enabled = false;
                 btnEditUser.Enabled= false;
+                romveErorAll();
             }
             else
             {
