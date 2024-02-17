@@ -111,6 +111,7 @@ namespace BankProject
             ErrrEmpty.SetError(txtFirstName, "");
             txtLastName.Clear();
             ErrrEmpty.SetError(txtLastName, "");
+            romveErorAll();
             DesableFindUser(false);
             progressTotalFind.Value = 0;
             rbtnIDSearch.Checked = true;
@@ -410,11 +411,12 @@ namespace BankProject
             removeError(txtFindFirstName);
             removeError(txtFindLastName);
         }
+        User target;
         private void btnSearchUser_Click(object sender, EventArgs e)
         {
             
             int index=(rbtnIDSearch.Checked)?Globale.listUsers.getUserID(txtSearchById.Text):Globale.listUsers.getUserUserName(txtSearchByUserName.Text);
-            User target = Globale.listUsers.getUserByIndex(index);
+            target = Globale.listUsers.getUserByIndex(index);
             if (target == null)
             {
                 ErrrEmpty.SetError(btnSearchUser, "This user is not in the system");
@@ -435,6 +437,7 @@ namespace BankProject
                 btnDelete.Enabled = true;
 
             }
+            ErrrEmpty.SetError(btnDelete, "");
         }
         private void NOEmptySomthing(TextBox test)
         {
@@ -531,6 +534,26 @@ namespace BankProject
             btnSearchUser.Enabled = true;
             btnDelete.Enabled = true;
             editUser();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are you sure for delete "+txtFindUserName.Text,"Delete",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button2)==DialogResult.Cancel)
+                return;
+            if(Convert.ToInt16(target.Id)==0)
+            {
+                ErrrEmpty.SetError(btnDelete, "this is Admin Account you can't delete it");
+                return;
+            }
+            if(target.Id == Globale.currentUser.Id)
+            {
+                ErrrEmpty.SetError(btnDelete, "this is current user you can't delete it");
+                return;
+            }
+            Globale.listUsers.deleteUserID(target);
+            clearTexts();
+            userMangmentForm_Load(sender,e);
+            MessageBox.Show("The user " + target.UserName + " is delete from the system", "Seccess", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
