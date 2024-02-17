@@ -85,6 +85,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.ErrrEmpty = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnDelete = new System.Windows.Forms.Button();
             this.x.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -385,6 +386,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Black;
+            this.tabPage2.Controls.Add(this.btnDelete);
             this.tabPage2.Controls.Add(this.btnSaveUser);
             this.tabPage2.Controls.Add(this.btnEditUser);
             this.tabPage2.Controls.Add(this.groupBox2);
@@ -779,6 +781,20 @@
             // 
             this.ErrrEmpty.ContainerControl = this;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDelete.Location = new System.Drawing.Point(465, 331);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 50;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
             // userMangmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -863,5 +879,6 @@
         private System.Windows.Forms.Button btnSearchUser;
         private System.Windows.Forms.RadioButton rbtnUserNameSearch;
         private System.Windows.Forms.RadioButton rbtnIDSearch;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

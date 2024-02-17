@@ -117,6 +117,7 @@ namespace BankProject
             txtSearchByUserName.Enabled = false;
             btnEditUser.Enabled = false;
             btnSaveUser.Enabled = false;
+            btnDelete.Enabled = false;
             
         }
         private void DesableFindUser(bool option)
@@ -405,6 +406,8 @@ namespace BankProject
                 clearTexts();
                 progressTotalFind.Text = "0%";
                 progressTotalFind.Value = 0;
+                btnDelete.Enabled = false;
+                btnEditUser.Enabled= false;
             }
             else
             {
@@ -413,6 +416,7 @@ namespace BankProject
                 fillTheTextBoxWithUser(target);
                 ErrrEmpty.SetError(btnSearchUser, "");
                 btnEditUser.Enabled = true;
+                btnDelete.Enabled = true;
 
             }
         }
@@ -491,6 +495,7 @@ namespace BankProject
             txtSearchById.Enabled = false;
             txtSearchByUserName.Enabled = false;
             btnSearchUser.Enabled = false;
+            btnDelete.Enabled = false;
         }
         private void editUser()
         {
@@ -508,6 +513,7 @@ namespace BankProject
             txtSearchById.Enabled = true;
             txtSearchByUserName.Enabled = true;
             btnSearchUser.Enabled = true;
+            btnDelete.Enabled = true;
             editUser();
         }
     }
