@@ -555,5 +555,15 @@ namespace BankProject
             userMangmentForm_Load(sender,e);
             MessageBox.Show("The user " + target.UserName + " is delete from the system", "Seccess", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

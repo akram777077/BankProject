@@ -53,6 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblFist = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnSaveUser = new System.Windows.Forms.Button();
             this.btnEditUser = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -84,13 +85,24 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnAply = new System.Windows.Forms.Button();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.txtFilter = new System.Windows.Forms.TextBox();
+            this.LvUsers = new System.Windows.Forms.ListView();
+            this.ClId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ClUserName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ClFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ClLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ClPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ClEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ClBirthDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ErrrEmpty = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnDelete = new System.Windows.Forms.Button();
             this.x.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gbInfromation.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ErrrEmpty)).BeginInit();
             this.SuspendLayout();
             // 
@@ -399,6 +411,21 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "find user";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDelete.Location = new System.Drawing.Point(465, 331);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 50;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSaveUser
             // 
@@ -769,6 +796,10 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Black;
+            this.tabPage3.Controls.Add(this.btnAply);
+            this.tabPage3.Controls.Add(this.cbFilter);
+            this.tabPage3.Controls.Add(this.txtFilter);
+            this.tabPage3.Controls.Add(this.LvUsers);
             this.tabPage3.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -776,25 +807,108 @@
             this.tabPage3.Size = new System.Drawing.Size(768, 363);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "list Users";
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // btnAply
+            // 
+            this.btnAply.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAply.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAply.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnAply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAply.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAply.Location = new System.Drawing.Point(323, 31);
+            this.btnAply.Name = "btnAply";
+            this.btnAply.Size = new System.Drawing.Size(75, 23);
+            this.btnAply.TabIndex = 2;
+            this.btnAply.Text = "Aply";
+            this.btnAply.UseVisualStyleBackColor = true;
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Items.AddRange(new object[] {
+            "All",
+            "ID",
+            "User Name",
+            "Email",
+            "Phone",
+            "First Name",
+            "Last Name",
+            "Password",
+            "Address",
+            "Birth Date"});
+            this.cbFilter.Location = new System.Drawing.Point(193, 6);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(121, 21);
+            this.cbFilter.TabIndex = 1;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
+            // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(6, 6);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(155, 20);
+            this.txtFilter.TabIndex = 0;
+            // 
+            // LvUsers
+            // 
+            this.LvUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.LvUsers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ClId,
+            this.ClUserName,
+            this.ClFirstName,
+            this.ClLastName,
+            this.ClPhone,
+            this.ClEmail,
+            this.ClBirthDate});
+            this.LvUsers.ForeColor = System.Drawing.Color.White;
+            this.LvUsers.HideSelection = false;
+            this.LvUsers.Location = new System.Drawing.Point(0, 60);
+            this.LvUsers.Name = "LvUsers";
+            this.LvUsers.Size = new System.Drawing.Size(768, 303);
+            this.LvUsers.TabIndex = 0;
+            this.LvUsers.UseCompatibleStateImageBehavior = false;
+            this.LvUsers.View = System.Windows.Forms.View.Details;
+            // 
+            // ClId
+            // 
+            this.ClId.Text = "ID";
+            this.ClId.Width = 100;
+            // 
+            // ClUserName
+            // 
+            this.ClUserName.Text = "User Name";
+            this.ClUserName.Width = 100;
+            // 
+            // ClFirstName
+            // 
+            this.ClFirstName.Text = "First Name";
+            this.ClFirstName.Width = 100;
+            // 
+            // ClLastName
+            // 
+            this.ClLastName.Text = "Last Name";
+            this.ClLastName.Width = 100;
+            // 
+            // ClPhone
+            // 
+            this.ClPhone.Text = "Phone";
+            this.ClPhone.Width = 100;
+            // 
+            // ClEmail
+            // 
+            this.ClEmail.Text = "Email";
+            this.ClEmail.Width = 100;
+            // 
+            // ClBirthDate
+            // 
+            this.ClBirthDate.Text = "Birth Date";
+            this.ClBirthDate.Width = 100;
             // 
             // ErrrEmpty
             // 
             this.ErrrEmpty.ContainerControl = this;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelete.Location = new System.Drawing.Point(465, 331);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 50;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // userMangmentForm
             // 
@@ -817,6 +931,8 @@
             this.groupBox2.PerformLayout();
             this.gbInfromation.ResumeLayout(false);
             this.gbInfromation.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ErrrEmpty)).EndInit();
             this.ResumeLayout(false);
 
@@ -881,5 +997,16 @@
         private System.Windows.Forms.RadioButton rbtnUserNameSearch;
         private System.Windows.Forms.RadioButton rbtnIDSearch;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.ListView LvUsers;
+        private System.Windows.Forms.ColumnHeader ClId;
+        private System.Windows.Forms.ColumnHeader ClUserName;
+        private System.Windows.Forms.ColumnHeader ClFirstName;
+        private System.Windows.Forms.ColumnHeader ClLastName;
+        private System.Windows.Forms.ColumnHeader ClPhone;
+        private System.Windows.Forms.ColumnHeader ClEmail;
+        private System.Windows.Forms.ColumnHeader ClBirthDate;
+        private System.Windows.Forms.TextBox txtFilter;
+        private System.Windows.Forms.Button btnAply;
+        private System.Windows.Forms.ComboBox cbFilter;
     }
 }
