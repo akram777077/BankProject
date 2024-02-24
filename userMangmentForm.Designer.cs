@@ -822,6 +822,7 @@
             this.btnAply.TabIndex = 2;
             this.btnAply.Text = "Aply";
             this.btnAply.UseVisualStyleBackColor = true;
+            this.btnAply.Click += new System.EventHandler(this.btnAply_Click);
             // 
             // cbFilter
             // 
@@ -829,13 +830,10 @@
             this.cbFilter.FormattingEnabled = true;
             this.cbFilter.Items.AddRange(new object[] {
             "All",
-            "ID",
-            "User Name",
             "Email",
             "Phone",
             "First Name",
             "Last Name",
-            "Password",
             "Address",
             "Birth Date"});
             this.cbFilter.Location = new System.Drawing.Point(193, 6);
@@ -850,6 +848,7 @@
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(155, 20);
             this.txtFilter.TabIndex = 0;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // LvUsers
             // 
@@ -862,7 +861,7 @@
             this.ClPhone,
             this.ClEmail,
             this.ClBirthDate});
-            this.LvUsers.ForeColor = System.Drawing.Color.White;
+            this.LvUsers.ForeColor = System.Drawing.Color.Black;
             this.LvUsers.HideSelection = false;
             this.LvUsers.Location = new System.Drawing.Point(0, 60);
             this.LvUsers.Name = "LvUsers";
@@ -899,7 +898,7 @@
             // ClEmail
             // 
             this.ClEmail.Text = "Email";
-            this.ClEmail.Width = 100;
+            this.ClEmail.Width = 158;
             // 
             // ClBirthDate
             // 

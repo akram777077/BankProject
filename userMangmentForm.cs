@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace BankProject
 {
@@ -119,6 +120,8 @@ namespace BankProject
             btnEditUser.Enabled = false;
             btnSaveUser.Enabled = false;
             btnDelete.Enabled = false;
+            btnAply.Enabled = false;
+            cbFilter.Text = "All";
             
         }
         private void DesableFindUser(bool option)
@@ -563,7 +566,78 @@ namespace BankProject
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cbFilter.Text != "All")
+            {
+                txtFilter.Enabled = true;
+                if(txtFilter.Text.ToString()=="")
+                    btnAply.Enabled = false;
+                return;
+            }
+            txtFilter.Enabled = false;
+            btnAply.Enabled = true;
+        }
+        private void addUserToList(User user)
+        {
+            ListViewItem item = new ListViewItem(user.Id);
+            item.SubItems.Add(user.UserName);
+            item.SubItems.Add(user.FirstName);
+            item.SubItems.Add(user.LastName);
+            item.SubItems.Add(user.Phone);
+            item.SubItems.Add(user.Email);
+            item.SubItems.Add(user.DateOfBirth.ToShortDateString());
+            LvUsers.Items.Add(item);
+        }
+        private void fillListUsers()
+        {
+            for(int i=0;i<Globale.listUsers.getSize();i++)
+                addUserToList(Globale.listUsers.getUserByIndex(i));
+        }
+        private void fillListUsersFilter(string filter,string target)
+        {
+            string comp = "";
+            for (int i = 0; i < Globale.listUsers.getSize(); i++)
+            {
+                User temp = Globale.listUsers.getUserByIndex(i);
+                switch(filter)
+                {
+                    case "Email":
+                        comp = temp.Email;
+                        break;
+                    case "Phone":
+                        comp = temp.Phone;
+                        break;
+                    case "First Name":
+                        comp = temp.FirstName;
+                        break;
+                    case "Last Name":
+                        comp = temp.LastName;
+                        break;
+                    case "Address":
+                        comp = temp.Address;
+                        break;
+                    case "Birth Date":
+                        comp = temp.DateOfBirth.ToShortDateString();
+                        break;
+                }
+                if(comp==target)
+                    addUserToList(Globale.listUsers.getUserByIndex(i));
+            }
+        }
+        private void btnAply_Click(object sender, EventArgs e)
+        {
+            LvUsers.Items.Clear();
+            if(cbFilter.Text.ToString()=="All")
+            {
+                fillListUsers();
+                return;
+            }
+            fillListUsersFilter(cbFilter.Text.ToString(), txtFilter.Text.ToString());
+        }
 
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            btnAply.Enabled = !string.IsNullOrEmpty(txtFilter.Text);
+                
         }
     }
 }

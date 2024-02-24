@@ -13,6 +13,7 @@ public class Users
 	private string _fileName;
 	private string _separator;
 	private int _key;
+	private int _size;
 
 	public Users(string fileName , string _separator , int key)
 	{
@@ -20,11 +21,13 @@ public class Users
 		this._fileName = fileName;
 		this._separator = _separator;
 		this._key = key;
+		this._size = 0;
 	}
 	public void addUser(User user)
 	{
 		_users.Add(user);
 		save();
+		_size++;
 	}
 	public int getUserID(string ID)
 	{
@@ -48,6 +51,7 @@ public class Users
 	{
 		_users.Remove(target);
 		save();
+		_size--;
 	}
 	public void save()
 	{
@@ -60,7 +64,10 @@ public class Users
 	{
 		string[] result = File.ReadAllLines(this._fileName);
 		foreach (string line in result)
+		{
 			_users.Add(User.lineToUser(line, _separator, _key));
+			_size++;
+		}
 	}
 	public void clearFile()
 	{
@@ -74,5 +81,9 @@ public class Users
 	{
 		_users[index] = newUser;
 		save();
+	}
+	public int getSize()
+	{
+		return _size;
 	}
 }
