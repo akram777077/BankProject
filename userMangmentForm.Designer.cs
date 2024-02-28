@@ -96,6 +96,9 @@
             this.ClPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ClEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ClBirthDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ctxmnShowUsers = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ErrrEmpty = new System.Windows.Forms.ErrorProvider(this.components);
             this.x.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -103,6 +106,7 @@
             this.groupBox2.SuspendLayout();
             this.gbInfromation.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.ctxmnShowUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ErrrEmpty)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,12 +136,13 @@
             this.x.Location = new System.Drawing.Point(12, 49);
             this.x.Name = "x";
             this.x.SelectedIndex = 0;
-            this.x.Size = new System.Drawing.Size(776, 389);
+            this.x.Size = new System.Drawing.Size(790, 389);
             this.x.TabIndex = 7;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Black;
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage1.Controls.Add(this.txtEmail);
             this.tabPage1.Controls.Add(this.txtPhone);
             this.tabPage1.Controls.Add(this.txtId);
@@ -162,7 +167,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 363);
+            this.tabPage1.Size = new System.Drawing.Size(782, 363);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add User";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -204,7 +209,7 @@
             this.crProgress.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.crProgress.InnerMargin = 2;
             this.crProgress.InnerWidth = -1;
-            this.crProgress.Location = new System.Drawing.Point(-4, 6);
+            this.crProgress.Location = new System.Drawing.Point(0, 6);
             this.crProgress.MarqueeAnimationSpeed = 2000;
             this.crProgress.Name = "crProgress";
             this.crProgress.OuterColor = System.Drawing.Color.DimGray;
@@ -213,7 +218,7 @@
             this.crProgress.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.crProgress.ProgressWidth = 5;
             this.crProgress.SecondaryFont = new System.Drawing.Font("Impact", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crProgress.Size = new System.Drawing.Size(100, 93);
+            this.crProgress.Size = new System.Drawing.Size(97, 93);
             this.crProgress.StartAngle = 270;
             this.crProgress.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.crProgress.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
@@ -407,7 +412,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(768, 363);
+            this.tabPage2.Size = new System.Drawing.Size(782, 363);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "find user";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
@@ -576,7 +581,7 @@
             this.gbInfromation.ForeColor = System.Drawing.Color.White;
             this.gbInfromation.Location = new System.Drawing.Point(6, 6);
             this.gbInfromation.Name = "gbInfromation";
-            this.gbInfromation.Size = new System.Drawing.Size(759, 223);
+            this.gbInfromation.Size = new System.Drawing.Size(759, 233);
             this.gbInfromation.TabIndex = 48;
             this.gbInfromation.TabStop = false;
             this.gbInfromation.Text = "Infromation";
@@ -592,7 +597,7 @@
             // 
             // txtFindPhone
             // 
-            this.txtFindPhone.Location = new System.Drawing.Point(414, 192);
+            this.txtFindPhone.Location = new System.Drawing.Point(414, 185);
             this.txtFindPhone.Name = "txtFindPhone";
             this.txtFindPhone.Size = new System.Drawing.Size(100, 20);
             this.txtFindPhone.TabIndex = 5;
@@ -627,7 +632,7 @@
             this.progressTotalFind.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.progressTotalFind.ProgressWidth = 5;
             this.progressTotalFind.SecondaryFont = new System.Drawing.Font("Impact", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progressTotalFind.Size = new System.Drawing.Size(100, 93);
+            this.progressTotalFind.Size = new System.Drawing.Size(92, 90);
             this.progressTotalFind.StartAngle = 270;
             this.progressTotalFind.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.progressTotalFind.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
@@ -643,7 +648,7 @@
             // dtFindDateOfBirth
             // 
             this.dtFindDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFindDateOfBirth.Location = new System.Drawing.Point(636, 193);
+            this.dtFindDateOfBirth.Location = new System.Drawing.Point(636, 186);
             this.dtFindDateOfBirth.Name = "dtFindDateOfBirth";
             this.dtFindDateOfBirth.Size = new System.Drawing.Size(100, 20);
             this.dtFindDateOfBirth.TabIndex = 8;
@@ -687,7 +692,7 @@
             // 
             // txtFindPassword
             // 
-            this.txtFindPassword.Location = new System.Drawing.Point(199, 188);
+            this.txtFindPassword.Location = new System.Drawing.Point(199, 181);
             this.txtFindPassword.Name = "txtFindPassword";
             this.txtFindPassword.Size = new System.Drawing.Size(100, 20);
             this.txtFindPassword.TabIndex = 2;
@@ -699,7 +704,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(534, 193);
+            this.label1.Location = new System.Drawing.Point(534, 186);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 16);
             this.label1.TabIndex = 58;
@@ -732,7 +737,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(326, 194);
+            this.label12.Location = new System.Drawing.Point(326, 187);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 16);
             this.label12.TabIndex = 51;
@@ -743,7 +748,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Location = new System.Drawing.Point(98, 192);
+            this.label13.Location = new System.Drawing.Point(98, 185);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 16);
             this.label13.TabIndex = 49;
@@ -804,7 +809,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(768, 363);
+            this.tabPage3.Size = new System.Drawing.Size(782, 363);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "list Users";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
@@ -816,7 +821,7 @@
             this.btnAply.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnAply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAply.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAply.Location = new System.Drawing.Point(323, 31);
+            this.btnAply.Location = new System.Drawing.Point(336, 31);
             this.btnAply.Name = "btnAply";
             this.btnAply.Size = new System.Drawing.Size(75, 23);
             this.btnAply.TabIndex = 2;
@@ -861,6 +866,7 @@
             this.ClPhone,
             this.ClEmail,
             this.ClBirthDate});
+            this.LvUsers.ContextMenuStrip = this.ctxmnShowUsers;
             this.LvUsers.ForeColor = System.Drawing.Color.Black;
             this.LvUsers.HideSelection = false;
             this.LvUsers.Location = new System.Drawing.Point(0, 60);
@@ -869,6 +875,7 @@
             this.LvUsers.TabIndex = 0;
             this.LvUsers.UseCompatibleStateImageBehavior = false;
             this.LvUsers.View = System.Windows.Forms.View.Details;
+            this.LvUsers.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.LvUsers_ItemSelectionChanged);
             // 
             // ClId
             // 
@@ -905,6 +912,26 @@
             this.ClBirthDate.Text = "Birth Date";
             this.ClBirthDate.Width = 100;
             // 
+            // ctxmnShowUsers
+            // 
+            this.ctxmnShowUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editUserToolStripMenuItem,
+            this.deleteUserToolStripMenuItem});
+            this.ctxmnShowUsers.Name = "contextMenuStrip1";
+            this.ctxmnShowUsers.Size = new System.Drawing.Size(181, 70);
+            // 
+            // editUserToolStripMenuItem
+            // 
+            this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
+            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editUserToolStripMenuItem.Text = "Edit";
+            // 
+            // deleteUserToolStripMenuItem
+            // 
+            this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
+            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteUserToolStripMenuItem.Text = "Delete";
+            // 
             // ErrrEmpty
             // 
             this.ErrrEmpty.ContainerControl = this;
@@ -932,6 +959,7 @@
             this.gbInfromation.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.ctxmnShowUsers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ErrrEmpty)).EndInit();
             this.ResumeLayout(false);
 
@@ -1007,5 +1035,8 @@
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Button btnAply;
         private System.Windows.Forms.ComboBox cbFilter;
+        private System.Windows.Forms.ContextMenuStrip ctxmnShowUsers;
+        private System.Windows.Forms.ToolStripMenuItem editUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteUserToolStripMenuItem;
     }
 }

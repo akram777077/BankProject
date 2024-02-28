@@ -91,7 +91,7 @@ namespace BankProject
         }
         private void userMangmentForm_Load(object sender, EventArgs e)
         {
-
+            ctxmnShowUsers.Enabled = false;
             crProgress.Value = 0;
             button1.Enabled = false;
             dtDateOfBirth.Value = DateTime.Now;
@@ -638,6 +638,11 @@ namespace BankProject
         {
             btnAply.Enabled = !string.IsNullOrEmpty(txtFilter.Text);
                 
+        }
+
+        private void LvUsers_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            ctxmnShowUsers.Enabled = LvUsers.SelectedItems.Count>0;
         }
     }
 }
