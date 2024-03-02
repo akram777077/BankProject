@@ -19,9 +19,9 @@ namespace BankProject
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(Globale.currentUser.UserName+" are you sure for logout ?", Globale.currentUser.UserName+" logout", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
-                return;
-            this.Close();
+           //if (MessageBox.Show(Globale.currentUser.UserName+" are you sure for logout ?", Globale.currentUser.UserName+" logout", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+           //     return;
+           // this.Hide();
         }
 
         private void btnClientMang_Click(object sender, EventArgs e)

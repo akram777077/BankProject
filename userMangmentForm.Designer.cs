@@ -835,6 +835,7 @@
             this.cbFilter.FormattingEnabled = true;
             this.cbFilter.Items.AddRange(new object[] {
             "All",
+            "User Name",
             "Email",
             "Phone",
             "First Name",
@@ -918,18 +919,18 @@
             this.editUserToolStripMenuItem,
             this.deleteUserToolStripMenuItem});
             this.ctxmnShowUsers.Name = "contextMenuStrip1";
-            this.ctxmnShowUsers.Size = new System.Drawing.Size(181, 70);
+            this.ctxmnShowUsers.Size = new System.Drawing.Size(108, 48);
             // 
             // editUserToolStripMenuItem
             // 
             this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
-            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.editUserToolStripMenuItem.Text = "Edit";
             // 
             // deleteUserToolStripMenuItem
             // 
             this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
-            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteUserToolStripMenuItem.Text = "Delete";
             // 
             // ErrrEmpty
@@ -938,9 +939,11 @@
             // 
             // userMangmentForm
             // 
+            this.AcceptButton = this.btnAply;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.x);
             this.Controls.Add(this.btnExit);

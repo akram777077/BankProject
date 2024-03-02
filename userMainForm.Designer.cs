@@ -40,6 +40,7 @@
             // 
             this.btnLogout.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -85,6 +86,7 @@
             // 
             // btnLogLogin
             // 
+            this.btnLogLogin.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnLogLogin.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLogLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLogLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
@@ -125,6 +127,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.CancelButton = this.btnLogout;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.label3);
