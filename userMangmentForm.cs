@@ -618,6 +618,9 @@ namespace BankProject
                     case "Birth Date":
                         comp = temp.DateOfBirth.ToShortDateString();
                         break;
+                    case "User Name":
+                        comp = temp.UserName;
+                        break;
                 }
                 if(comp==target)
                     addUserToList(Globale.listUsers.getUserByIndex(i));
