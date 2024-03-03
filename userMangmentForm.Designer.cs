@@ -114,6 +114,7 @@
             // 
             this.btnExit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -919,19 +920,22 @@
             this.editUserToolStripMenuItem,
             this.deleteUserToolStripMenuItem});
             this.ctxmnShowUsers.Name = "contextMenuStrip1";
-            this.ctxmnShowUsers.Size = new System.Drawing.Size(108, 48);
+            this.ctxmnShowUsers.Size = new System.Drawing.Size(181, 70);
+            this.ctxmnShowUsers.Opening += new System.ComponentModel.CancelEventHandler(this.ctxmnShowUsers_Opening);
             // 
             // editUserToolStripMenuItem
             // 
             this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
-            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editUserToolStripMenuItem.Text = "Edit";
+            this.editUserToolStripMenuItem.Click += new System.EventHandler(this.editUserToolStripMenuItem_Click);
             // 
             // deleteUserToolStripMenuItem
             // 
             this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
-            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteUserToolStripMenuItem.Text = "Delete";
+            this.deleteUserToolStripMenuItem.Click += new System.EventHandler(this.deleteUserToolStripMenuItem_Click);
             // 
             // ErrrEmpty
             // 

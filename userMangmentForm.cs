@@ -120,7 +120,7 @@ namespace BankProject
             btnEditUser.Enabled = false;
             btnSaveUser.Enabled = false;
             btnDelete.Enabled = false;
-            btnAply.Enabled = false;
+            btnAply.Enabled = true;
             cbFilter.Text = "All";
             
         }
@@ -645,7 +645,40 @@ namespace BankProject
 
         private void LvUsers_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            ctxmnShowUsers.Enabled = LvUsers.SelectedItems.Count>0;
+            
+            if (LvUsers.SelectedItems.Count > 0)
+            {
+                bool testCurrentUser = LvUsers.SelectedItems[0].SubItems[0].Text == Globale.currentUser.Id;
+                bool testAdmin = LvUsers.SelectedItems[0].SubItems[0].Text == "Admin";
+                ctxmnShowUsers.Enabled = true;
+                ctxmnShowUsers.Items[1].Enabled = true;
+                if (testCurrentUser || testAdmin)
+                    ctxmnShowUsers.Items[1].Enabled = false;
+            }
+            else
+                ctxmnShowUsers.Enabled = false;
+        }
+
+        private void editUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            int userIndex = Globale.listUsers.getUserID(LvUsers.SelectedItems[0].SubItems[0].Text);
+            User user = Globale.listUsers.getUserByIndex(userIndex);
+            if (MessageBox.Show("Are you sure for Delete " +user.UserName +"?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                return;
+            Globale.listUsers.deleteUserID(user);
+            MessageBox.Show($"The user {user.UserName} is Deleting from the system","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            btnAply_Click(sender, e);
+        }
+
+        private void ctxmnShowUsers_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }
