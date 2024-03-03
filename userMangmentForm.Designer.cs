@@ -836,6 +836,7 @@
             this.cbFilter.FormattingEnabled = true;
             this.cbFilter.Items.AddRange(new object[] {
             "All",
+            "ID",
             "User Name",
             "Email",
             "Phone",
@@ -882,7 +883,7 @@
             // ClId
             // 
             this.ClId.Text = "ID";
-            this.ClId.Width = 100;
+            this.ClId.Width = 59;
             // 
             // ClUserName
             // 
@@ -907,7 +908,7 @@
             // ClEmail
             // 
             this.ClEmail.Text = "Email";
-            this.ClEmail.Width = 158;
+            this.ClEmail.Width = 188;
             // 
             // ClBirthDate
             // 
@@ -920,20 +921,20 @@
             this.editUserToolStripMenuItem,
             this.deleteUserToolStripMenuItem});
             this.ctxmnShowUsers.Name = "contextMenuStrip1";
-            this.ctxmnShowUsers.Size = new System.Drawing.Size(181, 70);
+            this.ctxmnShowUsers.Size = new System.Drawing.Size(108, 48);
             this.ctxmnShowUsers.Opening += new System.ComponentModel.CancelEventHandler(this.ctxmnShowUsers_Opening);
             // 
             // editUserToolStripMenuItem
             // 
             this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
-            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.editUserToolStripMenuItem.Text = "Edit";
             this.editUserToolStripMenuItem.Click += new System.EventHandler(this.editUserToolStripMenuItem_Click);
             // 
             // deleteUserToolStripMenuItem
             // 
             this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
-            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteUserToolStripMenuItem.Text = "Delete";
             this.deleteUserToolStripMenuItem.Click += new System.EventHandler(this.deleteUserToolStripMenuItem_Click);
             // 

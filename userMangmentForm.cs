@@ -621,6 +621,9 @@ namespace BankProject
                     case "User Name":
                         comp = temp.UserName;
                         break;
+                    case "ID":
+                        comp = temp.Id;
+                        break;
                 }
                 if(comp==target)
                     addUserToList(Globale.listUsers.getUserByIndex(i));
@@ -635,6 +638,8 @@ namespace BankProject
                 return;
             }
             fillListUsersFilter(cbFilter.Text.ToString(), txtFilter.Text.ToString());
+            if (LvUsers.Items.Count == 0)
+                MessageBox.Show($"{txtFilter.Text} is Not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
